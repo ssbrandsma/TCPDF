@@ -18920,34 +18920,7 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 				$prevlinewidth = $this->GetLineWidth();
 				$this->SetLineWidth($hrHeight);
 
-				$lineStyle = array();
-                    		if (isset($tag['fgcolor'])) {
-		                        $lineStyle['color'] = $tag['fgcolor'];
-                    		}
-
-                    		if (isset($tag['fgcolor'])) {
-                        		$lineStyle['color'] = $tag['fgcolor'];
-                    		}
-
-                    		if (isset($tag['style']['cap'])) {
-                        		$lineStyle['cap'] = $tag['style']['cap'];
-                    		}
-
-                    		if (isset($tag['style']['join'])) {
-                        		$lineStyle['join'] = $tag['style']['join'];
-                    		}
-
-                    		if (isset($tag['style']['dash'])) {
-                        		$lineStyle['dash'] = $tag['style']['dash'];
-                    		}
-
-                    		if (isset($tag['style']['phase'])) {
-                        		$lineStyle['phase'] = $tag['style']['phase'];
-                    		}
-
-				$lineStyle = array_filter($lineStyle);
-
-				$this->Line($x, $y, $x + $hrWidth, $y, $lineStyle);
+				$this->Line($x, $y, $x + $hrWidth, $y);
 				$this->SetLineWidth($prevlinewidth);
 				$this->addHTMLVertSpace(max($hbc, ($hrHeight / 2)), 0, $cell, !isset($dom[($key + 1)]));
 				break;
